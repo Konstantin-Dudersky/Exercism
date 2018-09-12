@@ -20,6 +20,5 @@ public static class Hamming
         }
 
         return count;
-
     }
 }
