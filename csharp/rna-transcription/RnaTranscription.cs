@@ -1,9 +1,34 @@
 using System;
+using System.Text;
 
 public static class RnaTranscription
 {
     public static string ToRna(string nucleotide)
     {
-        throw new NotImplementedException("You need to implement this function.");
+        StringBuilder retString = new StringBuilder();
+
+        foreach (char ch in nucleotide.ToUpper())
+        {
+            switch (ch)
+            {
+                case 'A':
+                    retString.Append('U');
+                    break;
+                case 'C':
+                    retString.Append('G');
+                    break;
+                case 'G':
+                    retString.Append('C');
+                    break;
+                case 'T':
+                    retString.Append('A');
+                    break;
+                default:
+                    retString.Append('?');
+                    break;
+            }
+        }
+
+        return retString.ToString();
     }
 }
